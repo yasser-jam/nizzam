@@ -1,10 +1,13 @@
+import 'vuetify/styles' // Global CSS has to be imported
 import { createApp } from 'vue'
-import App from './App.vue'
+
 import vuetify from './plugins/vuetify'
-import { loadFonts } from './plugins/webfontloader'
+import App from './App.vue'
 
-loadFonts()
 
-createApp(App)
-  .use(vuetify)
-  .mount('#app')
+
+const app = createApp(App)
+
+app.use(vuetify)
+
+app.mount('#app')
