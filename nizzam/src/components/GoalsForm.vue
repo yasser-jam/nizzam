@@ -23,9 +23,9 @@
               <v-col cols="12"
               >
                 <v-text-field
-                  label="Legal first name*"
-                  required
+                  label="Add new task"
                   width="700"
+                  v-model="task"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -43,7 +43,7 @@
           <v-btn
             color="warning"
             flat  
-            @click="dialog = false"
+            @click="addTask"
           >
             Save
           </v-btn>
@@ -56,6 +56,13 @@
 export default {
   data: () => ({
     dialog: false,
+    task: '',
   }),
+
+  methods: {
+    addTask() {
+      this.$store.commit('addTask', this.task)
+    }
+  }
 };
 </script>

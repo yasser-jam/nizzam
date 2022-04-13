@@ -25,16 +25,19 @@ import GoalsForm from './GoalsForm.vue'
 export default {
   data: () => (
     { 
-      tasks: [
-      { id: 1, text: "Finish homework", val: '' },
-      { id: 2, text: "Make Youtube video", val: '' },
-      { id: 3, text: "Go to work", val: '' },
-    ],
+      
     }
-  ), 
+  ),
+
+  computed: {
+    tasks() {
+      return this.$store.getters.tasks
+    }
+  },
+
   components: {
     GoalsForm
-  }
+  },
 };
 </script>
 
